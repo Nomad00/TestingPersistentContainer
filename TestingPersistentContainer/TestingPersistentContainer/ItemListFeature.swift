@@ -11,6 +11,10 @@ import _CoreDataDependency
 import SFSafeSymbols
 import SwiftUI
 
+#if DEBUG
+import CoreData
+#endif
+
 struct ItemListFeature: Reducer {
     @Dependency(\.persistentContainer)
     var persistentContainer
@@ -36,7 +40,7 @@ struct ItemListFeature: Reducer {
                         NSSortDescriptor(keyPath: \Item.name, ascending: true)
                     ]
                 ) {
-                    await send(.didLoadItems(items))
+                    await send(.didLoadItems(items)) // TODO: Need animation?
                 }
             }
         case let .didLoadItems(items):
@@ -44,8 +48,24 @@ struct ItemListFeature: Reducer {
             state.items = items
             return .none
         case .addItemTapped:
-            // TODO: Insert a prebuilt `Item`.
+#if DEBUG
+            return .run { @MainActor _ in
+                /// - note: Temporary while trying to get reacting to changes working.
+                /// Will have a dedicated UI.
+                _ = persistentContainer.with { context in
+                    let entity = NSEntityDescription.entity(
+                        forEntityName: "Item", in: context
+                    )!
+                    let newItem = Item(entity: entity, insertInto: context)
+                    let sampleItemName = PersistentContainer.sampleItems.randomElement()
+                    newItem.name = sampleItemName
+                    
+                    try! context.save()
+                }
+            }
+#else
             return .none
+#endif
         }
     }
 }
@@ -81,7 +101,6 @@ struct ItemListView: View {
 }
 
 #if DEBUG
-
 extension PersistentContainer {
     static let sampleItems = ["Apples", "Milk", "Cereal", "Coffee", "Carrots", "Oregano", "Napkins", "Trash bags", "Dark Chocolate Chunks", "Bacon"]
     
@@ -89,7 +108,10 @@ extension PersistentContainer {
     func withPreviewData()  -> Self {
         with { context in
             for sampleItem in Self.sampleItems {
-                let newItem = Item(context: context)
+                let entity = NSEntityDescription.entity(
+                    forEntityName: "Item", in: context
+                )!
+                let newItem = Item(entity: entity, insertInto: context)
                 newItem.name = sampleItem
             }
             

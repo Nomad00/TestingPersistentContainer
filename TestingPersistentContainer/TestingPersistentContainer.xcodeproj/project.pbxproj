@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4019DE72A006C80004FD5D8 /* DependenciesAdditions in Frameworks */ = {isa = PBXBuildFile; productRef = C4019DE62A006C80004FD5D8 /* DependenciesAdditions */; };
+		C4019DE92A006C80004FD5D8 /* _AppStorageDependency in Frameworks */ = {isa = PBXBuildFile; productRef = C4019DE82A006C80004FD5D8 /* _AppStorageDependency */; };
+		C4019DEB2A006C80004FD5D8 /* _CoreDataDependency in Frameworks */ = {isa = PBXBuildFile; productRef = C4019DEA2A006C80004FD5D8 /* _CoreDataDependency */; };
+		C4019DED2A006C80004FD5D8 /* _NotificationDependency in Frameworks */ = {isa = PBXBuildFile; productRef = C4019DEC2A006C80004FD5D8 /* _NotificationDependency */; };
+		C4019DEF2A006C80004FD5D8 /* _SwiftUIDependency in Frameworks */ = {isa = PBXBuildFile; productRef = C4019DEE2A006C80004FD5D8 /* _SwiftUIDependency */; };
 		C4229C5129F60BCB007E0CEB /* TestingPersistentContainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4229C5029F60BCB007E0CEB /* TestingPersistentContainerApp.swift */; };
 		C4229C5529F60BCC007E0CEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4229C5429F60BCC007E0CEB /* Assets.xcassets */; };
 		C4229C5829F60BCC007E0CEB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4229C5729F60BCC007E0CEB /* Preview Assets.xcassets */; };
@@ -18,9 +23,6 @@
 		C4229C8229F60C50007E0CEB /* Item+Wrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4229C8129F60C50007E0CEB /* Item+Wrapped.swift */; };
 		C4229C8429F60C71007E0CEB /* ItemListFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4229C8329F60C71007E0CEB /* ItemListFeatureTests.swift */; };
 		C4229C8729F60CAD007E0CEB /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = C4229C8629F60CAD007E0CEB /* ComposableArchitecture */; };
-		C4229C8A29F60CC1007E0CEB /* DependenciesAdditions in Frameworks */ = {isa = PBXBuildFile; productRef = C4229C8929F60CC1007E0CEB /* DependenciesAdditions */; };
-		C4229C8C29F60CC1007E0CEB /* _CoreDataDependency in Frameworks */ = {isa = PBXBuildFile; productRef = C4229C8B29F60CC1007E0CEB /* _CoreDataDependency */; };
-		C4229C8E29F60CC1007E0CEB /* _SwiftUIDependency in Frameworks */ = {isa = PBXBuildFile; productRef = C4229C8D29F60CC1007E0CEB /* _SwiftUIDependency */; };
 		C4229C9129F60CE7007E0CEB /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = C4229C9029F60CE7007E0CEB /* SFSafeSymbols */; };
 /* End PBXBuildFile section */
 
@@ -62,11 +64,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4019DEB2A006C80004FD5D8 /* _CoreDataDependency in Frameworks */,
+				C4019DEF2A006C80004FD5D8 /* _SwiftUIDependency in Frameworks */,
+				C4019DE72A006C80004FD5D8 /* DependenciesAdditions in Frameworks */,
+				C4019DED2A006C80004FD5D8 /* _NotificationDependency in Frameworks */,
+				C4019DE92A006C80004FD5D8 /* _AppStorageDependency in Frameworks */,
 				C4229C9129F60CE7007E0CEB /* SFSafeSymbols in Frameworks */,
 				C4229C8729F60CAD007E0CEB /* ComposableArchitecture in Frameworks */,
-				C4229C8C29F60CC1007E0CEB /* _CoreDataDependency in Frameworks */,
-				C4229C8A29F60CC1007E0CEB /* DependenciesAdditions in Frameworks */,
-				C4229C8E29F60CC1007E0CEB /* _SwiftUIDependency in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,10 +168,12 @@
 			name = TestingPersistentContainer;
 			packageProductDependencies = (
 				C4229C8629F60CAD007E0CEB /* ComposableArchitecture */,
-				C4229C8929F60CC1007E0CEB /* DependenciesAdditions */,
-				C4229C8B29F60CC1007E0CEB /* _CoreDataDependency */,
-				C4229C8D29F60CC1007E0CEB /* _SwiftUIDependency */,
 				C4229C9029F60CE7007E0CEB /* SFSafeSymbols */,
+				C4019DE62A006C80004FD5D8 /* DependenciesAdditions */,
+				C4019DE82A006C80004FD5D8 /* _AppStorageDependency */,
+				C4019DEA2A006C80004FD5D8 /* _CoreDataDependency */,
+				C4019DEC2A006C80004FD5D8 /* _NotificationDependency */,
+				C4019DEE2A006C80004FD5D8 /* _SwiftUIDependency */,
 			);
 			productName = TestingPersistentContainer;
 			productReference = C4229C4D29F60BCB007E0CEB /* TestingPersistentContainer.app */;
@@ -243,8 +249,8 @@
 			mainGroup = C4229C4429F60BCB007E0CEB;
 			packageReferences = (
 				C4229C8529F60CAD007E0CEB /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
-				C4229C8829F60CC1007E0CEB /* XCRemoteSwiftPackageReference "swift-dependencies-additions" */,
 				C4229C8F29F60CE7007E0CEB /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+				C4019DE52A006C80004FD5D8 /* XCRemoteSwiftPackageReference "swift-dependencies-additions" */,
 			);
 			productRefGroup = C4229C4E29F60BCB007E0CEB /* Products */;
 			projectDirPath = "";
@@ -619,20 +625,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C4019DE52A006C80004FD5D8 /* XCRemoteSwiftPackageReference "swift-dependencies-additions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tgrapperon/swift-dependencies-additions";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
 		C4229C8529F60CAD007E0CEB /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
 				branch = prerelease/1.0;
 				kind = branch;
-			};
-		};
-		C4229C8829F60CC1007E0CEB /* XCRemoteSwiftPackageReference "swift-dependencies-additions" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/tgrapperon/swift-dependencies-additions";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.2;
 			};
 		};
 		C4229C8F29F60CE7007E0CEB /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
@@ -646,25 +652,35 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C4019DE62A006C80004FD5D8 /* DependenciesAdditions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4019DE52A006C80004FD5D8 /* XCRemoteSwiftPackageReference "swift-dependencies-additions" */;
+			productName = DependenciesAdditions;
+		};
+		C4019DE82A006C80004FD5D8 /* _AppStorageDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4019DE52A006C80004FD5D8 /* XCRemoteSwiftPackageReference "swift-dependencies-additions" */;
+			productName = _AppStorageDependency;
+		};
+		C4019DEA2A006C80004FD5D8 /* _CoreDataDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4019DE52A006C80004FD5D8 /* XCRemoteSwiftPackageReference "swift-dependencies-additions" */;
+			productName = _CoreDataDependency;
+		};
+		C4019DEC2A006C80004FD5D8 /* _NotificationDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4019DE52A006C80004FD5D8 /* XCRemoteSwiftPackageReference "swift-dependencies-additions" */;
+			productName = _NotificationDependency;
+		};
+		C4019DEE2A006C80004FD5D8 /* _SwiftUIDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4019DE52A006C80004FD5D8 /* XCRemoteSwiftPackageReference "swift-dependencies-additions" */;
+			productName = _SwiftUIDependency;
+		};
 		C4229C8629F60CAD007E0CEB /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C4229C8529F60CAD007E0CEB /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
-		};
-		C4229C8929F60CC1007E0CEB /* DependenciesAdditions */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C4229C8829F60CC1007E0CEB /* XCRemoteSwiftPackageReference "swift-dependencies-additions" */;
-			productName = DependenciesAdditions;
-		};
-		C4229C8B29F60CC1007E0CEB /* _CoreDataDependency */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C4229C8829F60CC1007E0CEB /* XCRemoteSwiftPackageReference "swift-dependencies-additions" */;
-			productName = _CoreDataDependency;
-		};
-		C4229C8D29F60CC1007E0CEB /* _SwiftUIDependency */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C4229C8829F60CC1007E0CEB /* XCRemoteSwiftPackageReference "swift-dependencies-additions" */;
-			productName = _SwiftUIDependency;
 		};
 		C4229C9029F60CE7007E0CEB /* SFSafeSymbols */ = {
 			isa = XCSwiftPackageProductDependency;
